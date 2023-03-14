@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/nash
 echo $((2#BINARY)o)
