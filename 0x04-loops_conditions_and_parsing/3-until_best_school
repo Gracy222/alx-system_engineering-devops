@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+Best=0
+until [ $Best -eq 10 ];
+do
+        echo "Best School"
+        ((Best++))
+done
