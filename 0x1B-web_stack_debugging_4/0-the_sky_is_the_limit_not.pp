@@ -1,7 +1,14 @@
-#Tt allows you to simulate HTTP requests to a web server. 
-# I will make 2000 requests to my server with 100 requests at a time.
+# Thiss manuscript increases the amount of traffic an Nginx server can handle
 
- file{ '/etc/default/nginx':
-     ensure  => file,
-         content => "ULIMIT='-n 2049'\n"
-         }
+# Increase the ULIMIT of the default file
+file { 'fix-for-nginx':
+   ensure  => 'file',
+     path    => '/etc/default/nginx',
+       content => inline_template('<%= File.read("/etc/default/nginx").gsub(/15/, "4096") %>'),
+       }
+
+# Restart Nginx
+ -> exec { 'nginx-restart':
+   command => 'nginx restart',
+     path    => '/etc/init.d/',
+    }
