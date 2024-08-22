@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # gives access to SSH configuration file
 sudo vi /etc/ssh/ssh_config
-Hostname 100.25.48.242
+Hostname 100.26.250.155
 user ubuntu
 PasswordAuthentication no
 IdentityFile ~/.ssh/school
