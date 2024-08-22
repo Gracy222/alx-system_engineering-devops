@@ -1,4 +1,7 @@
-
-Host *
-    PasswordAuthentication no
-    IdentityFile ~/.ssh/school
+#!/usr/bin/env bash
+# gives access to SSH configuration file
+sudo vi /etc/ssh/ssh_config
+Hostname 100.26.11.89
+user ubuntu
+PasswordAuthentication no
+IdentityFile ~/.ssh/school
